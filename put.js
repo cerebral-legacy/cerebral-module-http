@@ -9,6 +9,10 @@ function put(url, dataPath) {
 
   function action(args) {
     var http = args.modules['cerebral-module-http'];
+    if( ! http) {
+      throw "Http action factories require 'cerebral-module-http' module to be added to controller or current module"
+    }
+
     var output = args.output;
 
     var fullUrl = createFullUrl(urlGetters, args);
