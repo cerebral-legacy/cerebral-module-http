@@ -16,15 +16,12 @@ const controller = Controller(Model())
 
 controller.addModules({
 
-  // Can pass any default options which
-  // will be used on all requests
-  http: Http({
-    baseUrl: '/api'
-  })
+  // Pass any axios options
+  http: Http({})
 })
 ```
 
-For other options go to [axios repo](https://github.com/mzabriskie/axios).
+Go to [axios repo](https://github.com/mzabriskie/axios) for options
 
 ### The service
 The module exposes a services with all HTTP methods: `get, post, put, delete, patch`. You access these inside actions.
@@ -37,13 +34,14 @@ function postTodo({state, output, services}) {
     .catch(output.error)
 }
 
-export default getUser;
+export default postTodo;
 ```
 
 The service returns a promise. Results of the http requests will be passed on an object: `{result, statusCode}`. That means you can easily output to `success` or `error` and grab those values off the input on the next action.
 
 ### The action factories
 This module also exposes some action factories to express request directly in a signal. You got `get, post, put, patch, delete` available to you.
+(Note that the inclusion of the `Http` module in the `addModules()` section is still required, even if you're only using action factories.)
 
 ```js
 import httpGet from 'cerebral-module-http/get'

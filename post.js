@@ -15,6 +15,10 @@ function post(url, dataPath) {
     }, services);
     var output = args.output;
 
+    if (!http) {
+      throw 'Http action factories require \'cerebral-module-http\' module to be added to controller or current module';
+    }
+
     var fullUrl = createFullUrl(urlGetters, args);
 
     http.post(fullUrl, getValue(args))
