@@ -8,11 +8,7 @@ HTTP module for Cerebral
 ### Get started
 
 ```js
-import Controller from 'cerebral'
-import Model from 'cerebral-model-baobab'
 import Http from 'cerebral-module-http'
-
-const controller = Controller(Model())
 
 controller.addModules({
 
@@ -45,16 +41,16 @@ This module also exposes some action factories to express request directly in a 
 
 ```js
 import httpGet from 'cerebral-module-http/get'
-import copy from 'cerebral-addons/copy'
+import {copy} from 'cerebral/operators'
 
 export default [
   [
     httpGet('/users'), {
       success: [
-        copy('input:/result', 'state:/users')
+        copy('input:result', 'state:users')
       ],
       error: [
-        copy('input:/result.message', 'state:/errorMessage')
+        copy('input:result.message', 'state:errorMessage')
       ]
     }    
   ]  
@@ -66,14 +62,14 @@ It is also possible to use url-scheme on the action factories to build up the ur
 ```js
 import httpPatch from 'cerebral-module-http/patch'
 import httpDelete from 'cerebral-module-http/delete'
-import copy from 'cerebral-addons/copy'
+import {copy} from 'cerebral/operators'
 
 export default [
   [
     // The array builds up the url, the last argument grabs
     // the data to be passed on the patch request
-    httpPatch(['/users/', 'input:/id'], 'state:/updatedUser'),
-    httpDelete(['/todos/', 'input:/id'])
+    httpPatch(['/users/', 'input:id'], 'state:updatedUser'),
+    httpDelete(['/todos/', 'input:id'])
   ]  
 ]
 ```
