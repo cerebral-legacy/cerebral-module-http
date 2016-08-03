@@ -148,7 +148,6 @@ function HttpModule (moduleOptions) {
       get: function (url, options) {
 		if (options && options.params) {
 			url = formatParams(url, options.params);
-			debugger;
 		}
 		  
         options = options || {}
