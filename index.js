@@ -133,13 +133,40 @@ function HttpModule (moduleOptions) {
         return request(options, createResponse(options, resolve, reject))
       })
     }
+	
+	function formatParams(url, params){
+	  return url + (url.indexOf("?") > 0 ? "&" : "?") + Object
+			.keys(params)
+			.map(function(key){
+				// check if array
+				if(params[key] instanceof Array)
+				{
+					var arrToUri = "";
+					
+					for(var i in params[key]) {						
+						arrToUri += key + "[]" + "=" + params[key][i] + "&";
+					}
+					
+					return arrToUri.substring(0, arrToUri.length - 1);
+				}
+				else
+					return key+"="+params[key];
+			})
+			.join("&")
+	}
 
     module.addServices({
       request: requestService,
       get: function (url, options) {
+		if (options && options.params) {
+			url = formatParams(url, options.params);
+			debugger;
+		}
+		  
         options = options || {}
         options.url = url
         options.method = 'GET'
+		
         return requestService(options)
       },
       post: function (url, body, options) {
