@@ -138,6 +138,12 @@ function HttpModule (moduleOptions) {
       request: requestService,
       get: function (url, options) {
         options = options || {}
+
+		if (options.query) {
+			
+			url += "?" + utils.urlEncode(options.query);
+		}
+		
         options.url = url
         options.method = 'GET'
         return requestService(options)
