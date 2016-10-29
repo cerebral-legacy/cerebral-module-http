@@ -1,5 +1,7 @@
 # cerebral-module-http
-HTTP module for Cerebral
+HTTP module for Cerebral 1.x
+
+For Cerebral 2 take a look at [cerebral-provider-http](https://github.com/cerebral/cerebral/tree/master/packages/cerebral-provider-http#readme).
 
 ### How to use
 Go to [http://www.cerebraljs.com/documentation/cerebral-module-http](http://www.cerebraljs.com/documentation/cerebral-module-http)
