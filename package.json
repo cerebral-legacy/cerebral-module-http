@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerebral/cerebral-module-http.git"
+    "url": "git+https://github.com/cerebral-legacy/cerebral-module-http.git"
   },
   "keywords": [
     "http",
@@ -17,7 +17,7 @@
   "author": "Christian Alfoni",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cerebral/cerebral-module-http/issues"
+    "url": "https://github.com/cerebral-legacy/cerebral-module-http/issues"
   },
-  "homepage": "https://github.com/cerebral/cerebral-module-http#readme"
+  "homepage": "https://github.com/cerebral-legacy/cerebral-module-http#readme"
 }
