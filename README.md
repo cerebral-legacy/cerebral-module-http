@@ -1,10 +1,10 @@
 # cerebral-module-http
 HTTP module for Cerebral 1.x
 
-For Cerebral 2 take a look at [cerebral-provider-http](https://github.com/cerebral/cerebral/tree/master/packages/cerebral-provider-http#readme).
+For Cerebral 2 take a look at [@cerebral/http](https://github.com/cerebral/cerebral/blob/master/packages/node_modules/%40cerebral/http#readme).
 
 ### How to use
-Go to [http://www.cerebraljs.com/documentation/cerebral-module-http](http://www.cerebraljs.com/documentation/cerebral-module-http)
+Go to [http://cerebral-website.herokuapp.com/documentation/cerebral-module-http](http://cerebral-website.herokuapp.com/documentation/cerebral-module-http)
 
 ### Contribute
 1. Clone repo
